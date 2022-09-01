@@ -8,8 +8,9 @@ const removeTodo = async (req, res) => {
   if (!result) {
     throw RequestError(404, "Not found");
   }
-  res.json({
+  res.status(200).json({
     message: "todo deleted",
+    todo:result
   });
 };
 
