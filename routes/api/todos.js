@@ -23,24 +23,15 @@ const { wrapper } = require("../../helpers/wrapper");
 
 router.get("/",  wrapper(listTodos));
 
-// router.post("/", wrapper(addTodo));
-router.post("/", async(req,res,next)=>{
-  await addTodo();
-  return await listTodos();
-});
-
-// router.delete("/:id",  wrapper(removeTodo));
-router.delete("/:id",  async(req,res,next)=>{
-  await removeTodo();
-  return await listTodos();
-});
+router.post("/", wrapper(addTodo));
 
 
-// router.put("/:id", wrapper(updateTodo));
-router.put("/:id", async(req,res,next)=>{
-  await updateTodo();
-  return await listTodos();
-});
+router.delete("/:id",  wrapper(removeTodo));
+
+
+
+router.put("/:id", wrapper(updateTodo));
+
 
 
 module.exports = router;
