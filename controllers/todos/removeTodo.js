@@ -10,10 +10,7 @@ const removeTodo = async (req, res) => {
   }
   res.status(200).json({
     message: "todo deleted",
-    todo:{
-      ...result,
-      id:result._id
-    }
+    id
   });
 };
 
