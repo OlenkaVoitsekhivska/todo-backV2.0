@@ -5,13 +5,13 @@ const { requestError } = require("../../helpers");
 
 const updateTodo = async (req, res) => {
   const { id } = req.params;
-  const {description} = req.body;
+  const {description:newDescription} = req.body;
   console.log(req.body)
   // const {complete:prevComplete} = await Todo.findById(id)
 
 
-  const result = await Todo.findByIdAndUpdate(id, {description});
-
+  const result = await Todo.findByIdAndUpdate(id, {description:newDescription});
+console.log(result)
 
   if (!result) {
     throw requestError(404, "Not found");
