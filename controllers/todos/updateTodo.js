@@ -19,7 +19,8 @@ const updateTodo = async (req, res) => {
   // res.json(result);
   res.json({
     message:"Todo updated successfully",
-    id:result._id
+    // id:result._id
+    description:result.description
   });
 };
 
