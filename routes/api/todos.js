@@ -6,7 +6,8 @@ const {
   addTodo,
   listTodos,
   removeTodo,
-  updateTodo
+  updateTodo,
+  toggleComplete
 } = require("../../controllers/todos");
 const { wrapper } = require("../../helpers/wrapper");
 // const { authenticate, validateBody, idValid } = require("../../middleware");
@@ -31,6 +32,8 @@ router.delete("/:id",  wrapper(removeTodo));
 
 
 router.put("/:id", wrapper(updateTodo));
+
+router.patch('/:id', wrapper(toggleComplete))
 
 
 

@@ -3,6 +3,7 @@ const listTodos = require('./listTodos');
 // const getTodoById = require('./gettodoById');
 const removeTodo = require('./removeTodo');
 const updateTodo = require('./updateTodo');
+const toggleComplete = require('./toggleComplete')
 
 module.exports ={
     addTodo,
@@ -10,4 +11,5 @@ module.exports ={
     // getTodoById,
     removeTodo,
     updateTodo,
+    toggleComplete
 }
