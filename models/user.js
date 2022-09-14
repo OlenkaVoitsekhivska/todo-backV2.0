@@ -16,6 +16,7 @@ const userSchema = Schema({
   },
   phone: {
     type: String,
+    default:null,
   },
   token: {
     type: String,

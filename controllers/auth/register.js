@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const { User } = require("../../models/user");
 
 const register = async (req, res) => {
-  const {email, password, username} = req.body;
+  const {email, password, username, phone} = req.body;
   console.log('this is request body',req.body)
   const user = await User.findOne({ email });
   if (user) {
@@ -15,7 +15,8 @@ const register = async (req, res) => {
   await User.create({
     username,
     email,
-    password:hashPassword
+    password:hashPassword,
+    phone
   });
   res.status(201).json({
     message: "Success",    
