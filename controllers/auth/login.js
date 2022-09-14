@@ -8,6 +8,7 @@ const { SECRET_KEY } = process.env;
 
 const login = async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body)
 
   const user = await User.findOne({ email });
   if (!user) {
@@ -30,10 +31,10 @@ const login = async (req, res) => {
 
   res.status(200).json({
     token,
-    user: {
-      email,
-      subscription: "starter",
-    },
+    expiresIn:3600
+    // user: {
+    //   email,
+    // },
   });
 };
 

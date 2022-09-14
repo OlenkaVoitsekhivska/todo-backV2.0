@@ -11,9 +11,11 @@ const { registerSchema, loginSchema } = require("../../validation/validation");
 
 const router = express.Router();
 
-router.post("/signup", validateBody(registerSchema), wrapper(ctrl.register));
+// router.post("/signup", validateBody(registerSchema), wrapper(ctrl.register));
+router.post("/signup",  wrapper(ctrl.register));
 
-router.post("/login", validateBody(loginSchema), wrapper(ctrl.login));
+// router.post("/login", validateBody(loginSchema), wrapper(ctrl.login));
+router.post("/login", wrapper(ctrl.login));
 
 router.get("/logout", authenticate, wrapper(ctrl.logout));
 

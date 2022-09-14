@@ -6,7 +6,7 @@ const getCurrent = async (req, res) => {
 
   res.status(200).json({
     email: result.email,
-    subscription: result.subscription,
+    username: result.username
   });
 };
 
